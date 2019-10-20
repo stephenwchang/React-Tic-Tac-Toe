@@ -1,0 +1,23 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.game {
+  align-content: center;
+  text-align: center;
+}
+
+.tile {
+  display: inline-block;
+  border: 1px solid black;
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+}
+
+.board {
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 320px;
+}
