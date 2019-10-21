@@ -11,11 +11,19 @@ export default class Game extends Component {
   }
 
   onClickHandler = (index) => {
-    console.log(index)
-    let newTiles = [...this.state.tiles];
-    newTiles[index] = this.state.currentPlayer;
-    let newPlayer = this.state.currentPlayer === 'X' ? 'O' : 'X';
-    this.setState({ tiles: newTiles, currentPlayer: newPlayer });
+    if (!this.state.tiles[index]) {
+      let newTiles = [...this.state.tiles];
+      newTiles[index] = this.state.currentPlayer;
+      let newPlayer = this.state.currentPlayer === 'X' ? 'O' : 'X';
+      this.setState({ tiles: newTiles, currentPlayer: newPlayer });
+    }
+
+  }
+
+  componentDidUpdate() {
+    if (this.state.tiles[0] === 'X') {
+      console.log('first tile is 1')
+    }
   }
 
   render() {
